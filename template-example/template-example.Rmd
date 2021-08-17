@@ -1,5 +1,5 @@
 ---
-title: '&nbsp;'
+title: 'Python Content Demo'
 output:
   html_document:
     theme:
