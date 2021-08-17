@@ -1,0 +1,83 @@
+---
+title: '&nbsp;'
+output: html_document
+resource_files:
+- bookmarking-banner.png
+---
+
+```{r setup, include=FALSE}
+library(connectwidgets)
+library(dplyr)
+
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+
+client <- connect(
+  # server  = Sys.getenv("CONNECT_SERVER"),
+  # api_key = Sys.getenv("CONNECT_API_KEY")
+  )
+
+all_content <- client %>%
+  content()
+
+bookmarking_content <- all_content %>%
+  by_tag("Bookmarkable State")
+```
+
+![](bookmarking-banner.png)
+
+> By default, Shiny apps have one major drawback compared to most web sites: you can’t bookmark the app to return to the same place in the future or share your work with someone else with a link in an email. That’s because, by default, Shiny does not expose the current state of the app in its URL. Fortunately, however, you can change this behaviour with a little extra work and this chapter will show you how.
+
+[Continue reading...](https://mastering-shiny.org/action-bookmark.html)
+
+## Published Examples
+
+```{r}
+bookmarking_content %>%
+  slice(2) %>%
+  rsc_card()
+```
+
+```{r}
+bookmarking_content %>%
+  slice(1) %>%
+  rsc_card()
+```
+
+```{r}
+bookmarking_content %>%
+  slice(3) %>%
+  rsc_card()
+```
+
+```{r}
+bookmarking_content %>%
+  slice(4) %>%
+  rsc_card()
+```
+
+```{r}
+bookmarking_content %>%
+  slice(5) %>%
+  rsc_card()
+```
+
+## Basic Pattern
+
+```
+ui <- function(request) {
+  fluidPage(
+    sidebarLayout(
+      sidebarPanel(
+        sliderInput("omega", "omega", value = 1, min = -2, max = 2, step = 0.01),
+        sliderInput("delta", "delta", value = 1, min = 0, max = 2, step = 0.01),
+        sliderInput("damping", "damping", value = 1, min = 0.9, max = 1, step = 0.001),
+        numericInput("length", "length", value = 100),
+        bookmarkButton()
+      ),
+      mainPanel(
+        plotOutput("fig")
+      )
+    )
+  )
+}
+```

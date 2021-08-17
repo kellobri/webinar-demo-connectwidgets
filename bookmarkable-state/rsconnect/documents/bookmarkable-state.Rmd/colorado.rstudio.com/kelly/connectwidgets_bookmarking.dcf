@@ -1,0 +1,13 @@
+name: connectwidgets_bookmarking
+title: connectwidgets bookmarking
+username: kelly
+account: kelly
+server: colorado.rstudio.com
+hostUrl: https://colorado.rstudio.com/rsc/__api__
+appId: 9630
+bundleId: 47268
+url: https://colorado.rstudio.com/rsc/content/b5485ea2-233c-4aa3-ba6f-b521e3b2f59a/
+when: 1629179293.41442
+asMultiple: FALSE
+asStatic: FALSE
+additionalFiles: bookmarking-banner.png

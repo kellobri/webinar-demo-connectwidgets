@@ -1,0 +1,13 @@
+name: template-example
+title: template-example
+username: kelly
+account: kelly
+server: colorado.rstudio.com
+hostUrl: https://colorado.rstudio.com/rsc/__api__
+appId: 9633
+bundleId: 47282
+url: https://colorado.rstudio.com/rsc/content/e8532fe8-1161-47d3-8715-cf9594c47ba6/
+when: 1629218620.79654
+asMultiple: FALSE
+asStatic: FALSE
+additionalFiles: python-banner.png
